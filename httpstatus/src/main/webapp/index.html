@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script type="application/javascript">
+        function test() {
+            $.ajax("/webapi/myresource/status", {
+                dataType: "text",
+                success: function( data ) {
+                    alert(data);
+                },
+                error: function(jqXHR, textStatus, errorThrown ) {
+                    alert(jqXHR.status + "," + textStatus + "," + errorThrown);
+                }
+            })
+        }
+    </script>
+    <title></title>
+</head>
+<body>
+    <input type="button" value="aa" onclick="test()">
+</body>
+</html>
