@@ -1,0 +1,22 @@
+//created on: 2015-1-28
+package com.aa
+
+//list any import classes here.
+import com.sample.Person;
+
+rule "rule1"
+
+    when
+        p : Person()
+    then
+        System.out.println("this is rule1");
+
+end
+
+rule "rule2"
+    when
+        p : Person()
+    then
+        System.out.println("this is rule2");
+
+end

@@ -1,0 +1,7 @@
+#演示用
+Feature: demo
+
+  Scenario: first demo
+    Given create an demo app
+    When say a word: hello
+    Then print a clause: hello word

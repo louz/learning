@@ -10,8 +10,12 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>httpstatus</module>
-        <module>jersey-sample</module>
+        <module>cucumber-demo</module>
+        <module>drools-hello</module>
+        <module>btrace-hello</module>
     </modules>
 
-
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 </project>

@@ -1,0 +1,21 @@
+//created on: 2015-1-28
+package com.bb
+
+//list any import classes here.
+import com.sample.Person;
+
+
+//declare any global variables here
+global java.util.List gList;
+
+
+
+rule "global rule"
+
+    when
+        Person()
+    then
+        gList.add(Integer.valueOf(1));
+
+end
+
