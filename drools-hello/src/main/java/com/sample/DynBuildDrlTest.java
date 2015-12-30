@@ -41,6 +41,10 @@ public class DynBuildDrlTest {
 
     private static void runRule(String myRule) {
         System.out.println(myRule);
+
+        long startTime = System.currentTimeMillis();
+        System.out.println("===== start time ===" + startTime);
+
         KieServices ks = KieServices.Factory.get();
         KieRepository kieRepository = ks.getRepository();
         KieFileSystem kieFileSystem = ks.newKieFileSystem();
@@ -51,12 +55,24 @@ public class DynBuildDrlTest {
         System.out.println(kieRepository.getDefaultReleaseId());
         KieContainer kContainer = ks.newKieContainer(kieRepository.getDefaultReleaseId());
 
+        long endTime = System.currentTimeMillis();
+        System.out.println("====== end time =======" + endTime);
+        System.out.println("==== used time =====" + (endTime - startTime) / 1000.0);
+
         KieSession kSession = kContainer.newKieSession();
 
         Person p = new Person();
         kSession.insert(p);
         kSession.fireAllRules();
         kSession.dispose();
+
+        // 获取KieBase/KieSession名称
+        for (String kBaseName : kContainer.getKieBaseNames()) {
+            System.out.println("== kBaseName ==" + kBaseName);
+            for (String kSessionName : kContainer.getKieSessionNamesInKieBase(kBaseName)) {
+                System.out.println("== kSessionName ==" + kSessionName);
+            }
+        }
     }
 
 }
