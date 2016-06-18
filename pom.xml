@@ -16,6 +16,7 @@
         <module>files-example</module>
         <module>maven-example</module>
         <module>mapreduce-example</module>
+        <module>kafka</module>
     </modules>
 
     <properties>

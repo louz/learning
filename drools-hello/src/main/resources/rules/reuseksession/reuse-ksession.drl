@@ -1,0 +1,32 @@
+package com.sample
+ 
+import com.sample.ReuseKieSessionDemo.ReuseObject;
+
+rule "Reuse KieSession"
+    when
+        m : ReuseObject(myMessage : message )
+    then
+        System.out.println( "[1]" + myMessage );
+end
+
+rule "Reuse KieSession2"
+    when
+        m : ReuseObject(myMessage : message )
+    then
+        System.out.println( "[2]" + myMessage );
+end
+
+rule "Reuse KieSession3"
+    when
+        m : ReuseObject(myMessage : message )
+    then
+        System.out.println( "[3]" + myMessage );
+end
+
+rule "Reuse KieSession4"
+    when
+        m : ReuseObject(myMessage : message )
+    then
+        System.out.println( "[4]" + myMessage );
+end
+
