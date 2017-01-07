@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>learning</artifactId>
+        <groupId>io.jasonlu</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>spring-restful</artifactId>
+    <packaging>war</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+        </dependency>
+
+        <!--
+            jackson 2的包在classpath时，spring会使用该包进行json转换，详见spring官方文档的
+            “Enabling the MVC Java Config or the MVC XML Namespace”
+         -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.8.3</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <version>2.7</version>
+                <configuration>
+                    <check>
+                        <!--<branchRate>85</branchRate>
+                        <lineRate>85</lineRate>-->
+                        <haltOnFailure>true</haltOnFailure>
+                        <!--<totalBranchRate>85</totalBranchRate>-->
+                        <!--<totalLineRate>85</totalLineRate>-->
+                        <!--<packageLineRate>85</packageLineRate>-->
+                        <!--<packageBranchRate>85</packageBranchRate>-->
+                        <regexes>
+                            <regex>
+                                <pattern>io.jasonlu.springrestful.*</pattern>
+                                <branchRate>90</branchRate>
+                                <!--<lineRate>80</lineRate>-->
+                            </regex>
+                        </regexes>
+                    </check>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>clean</goal>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

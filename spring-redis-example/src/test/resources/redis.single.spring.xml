@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+   <!-- <bean id="redisClusterConfig" class="org.springframework.data.redis.connection.RedisClusterConfiguration">
+          <property name="clusterNodes">
+              <list>
+                  <bean class="org.springframework.data.redis.connection.RedisNode">
+                      <constructor-arg name="host" value="192.168.99.100"/>
+                      <constructor-arg name="port" value="6379"/>
+                  </bean>
+              </list>
+          </property>
+    </bean>
+
+    <bean id="jedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+        <constructor-arg name="clusterConfig" ref="redisClusterConfig"/>
+    </bean>-->
+    <bean id="jedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
+          p:host-name="192.168.99.100" p:port="6379" />
+    <!-- redis template definition -->
+
+    <!--<bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate" p:connection-factory-ref="jedisConnectionFactory"/>-->
+    <bean id="redisTemplate" class="org.springframework.data.redis.core.StringRedisTemplate" p:connection-factory-ref="jedisConnectionFactory"/>
+</beans>

@@ -1,5 +1,6 @@
 package io.jasonlu.learning.mr;
 
+import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
@@ -20,7 +21,7 @@ public class MapperTest {
 
         mapDriver
                 .withInput(new LongWritable(0), new Text("1234,56789"))
-                .withOutput(new Text("1234"), new Text("56789"))
+                .withOutput(new Text("1234"), new IntWritable(56789))
                 .runTest();
     }
 }
