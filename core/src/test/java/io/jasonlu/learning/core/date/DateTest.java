@@ -1,4 +1,4 @@
-package io.jasonlu.learning.date;
+package io.jasonlu.learning.core.date;
 
 import org.junit.Test;
 

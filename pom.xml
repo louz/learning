@@ -30,7 +30,7 @@
         <module>maven-archive</module>
         <module>scala-sample</module>
         <module>javabasic</module>
-        <module>date</module>
+        <module>core</module>
     </modules>
 
     <properties>

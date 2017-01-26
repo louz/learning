@@ -17,19 +17,37 @@
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>3.0.0</version>
+
+                <!-- 将依赖包也打入jar包，需要配合jar-with-dependency-jars.xml -->
+                <configuration>
+                    <descriptors>
+                        <descriptor>jar-with-dependency-jars.xml</descriptor>
+                    </descriptors>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>libs/</classpathPrefix>
+                        </manifest>
+                    </archive>
+                </configuration>
+
+                <!-- 默认的将所有依赖包展开打成一个fat jar的配置 -->
+                <!--
                 <configuration>
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
-                    <archive>
-                        <manifest>
-                            <addClasspath>true</addClasspath>
-                        </manifest>
-                    </archive>
-                </configuration>
+                </configuration>-->
             </plugin>
         </plugins>
 
     </build>
 
+    <dependencies>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+    </dependencies>
 </project>

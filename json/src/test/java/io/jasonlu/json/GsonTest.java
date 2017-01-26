@@ -1,7 +1,10 @@
 package io.jasonlu.json;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import org.junit.Test;
+
+import java.time.LocalDate;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -15,7 +18,9 @@ public class GsonTest {
         String json = "{\"name\": \"abc\", \"value\": 1}";
         User user = new Gson().fromJson(json, User.class);
 
-        User expected = new User("abc", 1);
+        User expected = new User();
+        expected.setName("abc");
+        expected.setValue(1);
         assertThat(user, is(expected));
     }
 
@@ -25,6 +30,20 @@ public class GsonTest {
         User2 user = new Gson().fromJson(json, User2.class);
 
         User2 expected = new User2("abc", 1);
+        assertThat(user, is(expected));
+    }
+
+    @Test
+    public void testLocalDateSeDes() {
+        Gson gson = new GsonBuilder().registerTypeAdapter(LocalDate.class, new LocalDateAdapter()).create();
+
+        String json = "{\"name\":\"Tom\", \"birth\": \"2010-01-01\"}";
+        User user = gson.fromJson(json, User.class);
+
+        User expected = new User();
+        expected.setName("Tom");
+        expected.setBirth(LocalDate.parse("2010-01-01"));
+
         assertThat(user, is(expected));
     }
 }
