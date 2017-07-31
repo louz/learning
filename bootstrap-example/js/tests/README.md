@@ -28,7 +28,7 @@ To run the unit test suite via a real web browser, open `index.html` in the brow
 * Each test should begin with [`assert.expect`](http://api.qunitjs.com/expect/) to ensure that the expected assertions are run.
 * Each test should follow the project's [JavaScript Code Guidelines](https://github.com/twbs/bootstrap/blob/master/CONTRIBUTING.md#js)
 
-### Example tests
+### io.jasonlu.learning.springboot.Example tests
 
 ```javascript
 // Synchronous test

@@ -34,6 +34,17 @@ public class GsonTest {
     }
 
     @Test
+    public void testAliasColNameDeserialized2() {
+        String json = "{\"name\": \"abc\", \"v1\": 1}";
+        User2 user = new Gson().fromJson(json, User2.class);
+
+        User2 expected = new User2("abc", 1);
+        assertThat(user, is(expected));
+
+        System.out.println(new Gson().toJson(user));
+    }
+
+    @Test
     public void testLocalDateSeDes() {
         Gson gson = new GsonBuilder().registerTypeAdapter(LocalDate.class, new LocalDateAdapter()).create();
 

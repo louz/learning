@@ -31,6 +31,11 @@
         <module>scala-sample</module>
         <module>javabasic</module>
         <module>core</module>
+        <module>spring-boot-standalone-example</module>
+        <module>zookeeper-tools</module>
+        <module>spring-boot-example</module>
+        <module>spring4-demo</module>
+        <module>spring-boot-ds-demo</module>
     </modules>
 
     <properties>
@@ -42,7 +47,7 @@
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-framework-bom</artifactId>
-                <version>4.3.2.RELEASE</version>
+                <version>4.3.9.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -54,6 +59,13 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

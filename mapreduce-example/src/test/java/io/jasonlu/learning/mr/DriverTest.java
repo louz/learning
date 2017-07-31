@@ -22,8 +22,12 @@ public class DriverTest {
         conf.set("mapreduce.framework.name", "local");
         conf.setInt("mapreduce.task.io.sort.mb", 1);
 
-        Path input = new Path("d:/tmp/input");
-        Path output = new Path("d:/tmp/output");
+//        Path input = new Path("d:/tmp/input");
+        Path input = new Path("/Users/jiehenglu/tmp/input");
+
+
+//        Path output = new Path("d:/tmp/output");
+        Path output = new Path("/Users/jiehenglu/tmp/output");
         FileSystem fs = FileSystem.getLocal(conf);
         fs.delete(output, true); // delete old output
 

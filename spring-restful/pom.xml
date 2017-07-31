@@ -22,10 +22,24 @@
             jackson 2的包在classpath时，spring会使用该包进行json转换，详见spring官方文档的
             “Enabling the MVC Java Config or the MVC XML Namespace”
          -->
-        <dependency>
+       <!-- <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>2.8.3</version>
+        </dependency>-->
+
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.geronimo.specs</groupId>
+            <artifactId>geronimo-servlet_3.0_spec</artifactId>
+            <version>1.0</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -39,7 +53,7 @@
                     <check>
                         <!--<branchRate>85</branchRate>
                         <lineRate>85</lineRate>-->
-                        <haltOnFailure>true</haltOnFailure>
+                        <haltOnFailure>false</haltOnFailure>
                         <!--<totalBranchRate>85</totalBranchRate>-->
                         <!--<totalLineRate>85</totalLineRate>-->
                         <!--<packageLineRate>85</packageLineRate>-->

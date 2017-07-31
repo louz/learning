@@ -9,7 +9,7 @@ public class User2 {
     private final String name;
 
     // json中的字段名和java字段名不一致时需要用该注解进行转换
-    @SerializedName("v")
+    @SerializedName(value="v", alternate = {"v1"})
     private final int value;
 
     public User2(String name, int value) {

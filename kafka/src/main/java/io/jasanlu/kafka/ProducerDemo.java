@@ -14,7 +14,7 @@ public class ProducerDemo {
 
     public static void main(String[] args) {
         Producer<String, String> producer = getKafkaProducer();
-        String topic = "test";
+        String topic = "test3";
         for(int i = 0; i < 100; i++) {
             ProducerRecord<String, String> record = new ProducerRecord<>(topic, "NOOO." + Integer.toString(i));
             producer.send(record);
@@ -27,7 +27,7 @@ public class ProducerDemo {
     public static Producer<String, String> getKafkaProducer() {
         if (procuder == null) {
             Properties props = new Properties();
-            props.put("bootstrap.servers", "kafka:9092");
+            props.put("bootstrap.servers", "localhost:9092");
             props.put("acks", "all");
             props.put("retries", 0);
             props.put("batch.size", 16384);

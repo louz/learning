@@ -84,7 +84,7 @@ experience the problem? Do other browsers show the bug differently? What
 would you expect to be the outcome? All these details will help people to fix
 any potential bugs.
 
-Example:
+io.jasonlu.learning.springboot.Example:
 
 > Short and descriptive example bug report title
 >

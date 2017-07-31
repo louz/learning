@@ -4,8 +4,8 @@ package io.jasonlu.springrestful.bean;
  * Created by louz on 2016/9/22.
  */
 public class User {
-    private final int id;
-    private final String name;
+    private int id;
+    private String name;
 
     public User(int id, String name) {
         this.id = id;
@@ -19,4 +19,15 @@ public class User {
     public String getName() {
         return name;
     }
+
+    /*public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }*/
+
+   /* public User() {
+    }*/
 }
