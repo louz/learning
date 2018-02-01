@@ -36,6 +36,8 @@
         <module>spring-boot-example</module>
         <module>spring4-demo</module>
         <module>spring-boot-ds-demo</module>
+        <module>spring-boot-profile-demo</module>
+        <module>spring-aop</module>
     </modules>
 
     <properties>
