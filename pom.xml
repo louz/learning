@@ -38,6 +38,8 @@
         <module>spring-boot-ds-demo</module>
         <module>spring-boot-profile-demo</module>
         <module>spring-aop</module>
+        <module>selenide-demo</module>
+        <module>yaml</module>
     </modules>
 
     <properties>

@@ -14,7 +14,7 @@ public class ProducerDemo {
 
     public static void main(String[] args) {
         Producer<String, String> producer = getKafkaProducer();
-        String topic = "test3";
+        String topic = "test";
         for(int i = 0; i < 100; i++) {
             ProducerRecord<String, String> record = new ProducerRecord<>(topic, "NOOO." + Integer.toString(i));
             producer.send(record);
