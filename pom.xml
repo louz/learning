@@ -40,6 +40,8 @@
         <module>spring-aop</module>
         <module>selenide-demo</module>
         <module>yaml</module>
+        <module>junit5-demo</module>
+        <module>junit5-demo</module>
     </modules>
 
     <properties>
