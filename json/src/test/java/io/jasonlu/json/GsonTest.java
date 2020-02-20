@@ -2,6 +2,8 @@ package io.jasonlu.json;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import org.junit.Test;
 
 import java.time.LocalDate;
@@ -56,5 +58,19 @@ public class GsonTest {
         expected.setBirth(LocalDate.parse("2010-01-01"));
 
         assertThat(user, is(expected));
+    }
+
+    @Test
+    public void testParseToJsonObject() {
+        String json = "{\"name\": \"abc\", \"v\": 1, \"obj\": {\"a\": 1, \"b\": 2}}";
+        JsonObject jsonObject = JsonParser.parseString(json).getAsJsonObject();
+
+        assertThat(jsonObject.get("name").getAsString(), is("abc"));
+
+        jsonObject.addProperty("name", "ddd");
+        assertThat(jsonObject.get("name").getAsString(), is("ddd"));
+
+        jsonObject.getAsJsonObject("obj").addProperty("a", 2);
+        System.out.println(jsonObject.toString());
     }
 }
