@@ -16,3 +16,12 @@ println(json.replaceAll('"', '\\\\"'))
 
 println("\\\", \"".replaceAll("\\\\", "\\\\\\\\").replaceAll("\"", "\\\\\""))
 println("\\")
+
+def longString = """
+asdf
+asdf
+asdf
+"""
+
+println longString.replace("\\", "\\\\")
+System.currentTimeMillis()
