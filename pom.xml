@@ -40,6 +40,9 @@
         <module>spring-aop</module>
         <module>selenide-demo</module>
         <module>yaml</module>
+        <module>tomcat-demo</module>
+        <module>fabric8-demo</module>
+        <module>spring-restful-client</module>
     </modules>
 
     <properties>
