@@ -1,12 +1,10 @@
 package io.jasonlu.learning.core.date;
 
 import org.junit.Test;
-import sun.java2d.pipe.SpanShapeRenderer;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
