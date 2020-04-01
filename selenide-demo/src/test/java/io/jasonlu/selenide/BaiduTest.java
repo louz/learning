@@ -26,8 +26,11 @@ public class BaiduTest {
              PS：可根据driver的名称搜索各个driver的下载页
         */
 
-        //        Configuration.browser = "chrome";  // 默认是firefox
+                Configuration.browser = "chrome";  // 默认是firefox
         Configuration.baseUrl = "http://www.baidu.com";
+//        Configuration.headless = true;
+
+        Configuration.remote = 
         open("/");
         $("#kw").setValue("selenide");
         $("#su").click();
